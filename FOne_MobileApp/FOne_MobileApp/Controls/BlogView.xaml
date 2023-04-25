@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:model="clr-namespace:FOne_MobileApp.Models" 
+             xmlns:selector="clr-namespace:FOne_MobileApp.Controls.Selectors" 
+             xmlns:behaviors="clr-namespace:FOne_MobileApp.Behaviors" 
+             xmlns:converters="clr-namespace:FOne_MobileApp.Converters"
+             x:Class="FOne_MobileApp.Controls.BlogView">
+    <ContentView.Resources>
+        <converters:SelectedItemEventArgsToSelectedItemConverter  x:Key="SelectedItemConverter"/>
+        <DataTemplate x:Key="OtherItem">
+            <ViewCell>
+                <StackLayout>
+                    <Frame   
+                            BorderColor="Red"                   
+                            CornerRadius="5"  
+                           BackgroundColor="#484848"  
+                           HasShadow="True"  
+                            Padding="10"  
+                           Margin="10">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="50" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0"
+                               Grid.RowSpan="2" 
+                               Source="{Binding Image}"   
+                               Aspect="AspectFill"  
+                               HeightRequest="60"   
+                               WidthRequest="60" />
+                            <Label Grid.Column="1" Grid.Row="0"  
+                               Text="{Binding Title}"   
+                               FontAttributes="Bold"  
+                               TextColor="white"
+                               LineBreakMode="TailTruncation" />
+                            <Label Grid.Column="1" Grid.Row="1"    
+                               Text="{Binding SubTitle}"  
+                               LineBreakMode="TailTruncation" 
+                               TextColor="white"
+                               FontAttributes="Italic"   
+                               VerticalOptions="End" />
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+            </ViewCell>
+        </DataTemplate>
+        <DataTemplate x:Key="FirstItem" >
+            <ViewCell>
+                <StackLayout>
+                    <Frame   
+                            BorderColor="Red"  
+                            CornerRadius="5"  
+                           BackgroundColor="#484848"  
+                           HasShadow="True"  
+                            Padding="10"  
+                           Margin="10">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="80" />
+                            </Grid.ColumnDefinitions>
+                            <Image 
+                                            Grid.RowSpan="2" 
+                                            Grid.ColumnSpan="2" 
+                               Source="{Binding Image}"   
+                               Aspect="AspectFill"  
+                               HeightRequest="60"   
+                               WidthRequest="60" />
+                            <Label Grid.Column="0" Grid.Row="2"  
+                               Text="{Binding Title}"   
+                               FontAttributes="Bold"  
+                               TextColor="white"
+                               LineBreakMode="TailTruncation" />
+                            <Label Grid.Column="0" Grid.Row="3"    
+                               Text="{Binding SubTitle}"  
+                               LineBreakMode="TailTruncation" 
+                               TextColor="white"
+                               FontAttributes="Italic"   
+                               VerticalOptions="End" />
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup Name="CommonStates">
+                                    <VisualState Name="Normal" />
+                                    <VisualState Name="Selected">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="Transparent" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+            </ViewCell>
+        </DataTemplate>
+        <selector:ItemsDataTemplateSelector x:Key="itemTemplateSelector" FirstItem="{StaticResource FirstItem}" OtherItem="{StaticResource OtherItem}"/>
+    </ContentView.Resources>
+  <ContentView.Content>
+        <ScrollView x:Name="MainScroll" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Frame HasShadow="True" Padding="1">
+                    <Frame.Background>
+                        <LinearGradientBrush EndPoint="1,1">
+                            <GradientStop Color="#FFF" Offset="0.6" />
+                            <GradientStop Color="#FFF" Offset="0.6" />
+                            <GradientStop Color="#FFF" Offset="1" />
+                            <GradientStop Color="#484848" Offset="0.1" />
+                            <GradientStop Color="#484848" Offset="0.1" />
+                            <GradientStop Color="#FF0000" Offset="0.1" />
+                            <GradientStop Color="#FF0000" Offset="0.1" />
+                        </LinearGradientBrush>
+                    </Frame.Background>
+                    <ListView x:Name="MyListView" ItemsSource="{Binding Blogs}" HasUnevenRows="true" CachingStrategy="RetainElement" Margin="0,0,0,50" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" ItemTemplate="{StaticResource itemTemplateSelector}">
+                        <ListView.Behaviors>
+                            <behaviors:EventToCommandBehavior EventName="ItemSelected" Command="{Binding SelectItemCommand}" Converter="{StaticResource SelectedItemConverter}" />
+                        </ListView.Behaviors>
+                    </ListView>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

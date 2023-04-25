@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FOne_MobileApp.Controls.BlogDetailsView">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <Frame Padding="0,0" Margin="0">
+                <StackLayout>
+                    <Image Source="{Binding Path=Blog.Image}" Aspect="AspectFill" />
+                </StackLayout>
+            </Frame>
+                <Frame Padding="5,6,5,15" Margin="0,-7">
+                    <Frame.Background>
+                        <LinearGradientBrush EndPoint="1,2">
+                            <GradientStop Color="#484848" Offset="0.1" />
+                            <GradientStop Color="#484848" Offset="0.1" />
+                            <GradientStop Color="#484848" Offset="1" />
+                            <GradientStop Color="#FF0000" Offset="0.6" />
+                        </LinearGradientBrush>
+                    </Frame.Background>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="0" Orientation="Horizontal">
+                            <!--<Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span
+                                    FontAttributes="Italic"
+                                    TextColor="White"
+                                    FontSize="Caption"
+                                    FontFamily="MuliBlack"
+                                    Text="écrit par : " />
+                                        <Span
+                                    FontAttributes="Italic"
+                                    TextColor="White"
+                                    FontSize="Caption"
+                                    FontFamily="MuliBlack"
+                                    Text="{Binding Path=Blog.AuthorName}" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>-->
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+                <Frame Padding="0">
+                    <StackLayout BackgroundColor="WhiteSmoke">
+                        <Frame Padding="8" Margin="0,-5">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="0" Orientation="Horizontal">
+                                    <Label FontSize="Title" HorizontalOptions="Start" TextColor="Black" Text="{Binding Path=Blog.Title}"/>
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+
+
+                        <Label FontSize="Body" TextColor="Black" Text="{Binding Path=Blog.Text1}" Padding="5"/>
+                        <Label FontSize="Body" TextColor="Black" Text="{Binding Path=Blog.Text2}" Padding="5"/>
+                        <Label FontSize="Body" TextColor="Black" Text="{Binding Path=Blog.Text3}" Padding="5"/>
+                    
+                   
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
