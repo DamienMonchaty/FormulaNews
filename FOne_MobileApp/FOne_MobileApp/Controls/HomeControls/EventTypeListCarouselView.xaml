@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:model="clr-namespace:FOne_MobileApp.Models"
+             xmlns:local="clr-namespace:FOne_MobileApp.ViewModels" 
+             xmlns:converters="clr-namespace:FOne_MobileApp.Converters" xmlns:behaviors="clr-namespace:FOne_MobileApp.Behaviors"
+             x:Class="FOne_MobileApp.Controls.HomeControls.EventTypeListCarouselView"
+             x:Name="this">
+    <ContentView.Resources>
+        <!--<local:HomeViewModel x:Key="ViewModel"/>-->
+        <converters:SelectedItemEventArgsToSelectedItemConverter  x:Key="SelectedItemConverter"/>
+        <model:Driver x:Key="Driver"/>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid x:DataType="{x:Null}" RowSpacing="0" Padding="5" BackgroundColor="#484848" Margin="0,0,0,40">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0" />
+                <RowDefinition Height="45" />
+                <RowDefinition Height="585" />
+            </Grid.RowDefinitions>
+            <CollectionView
+            x:Name="CustomTabsView"
+            Grid.Row="1"
+            HorizontalScrollBarVisibility="Never"
+            ItemSizingStrategy="MeasureAllItems"
+            ItemsSource="{Binding TabVms}"
+            ItemsUpdatingScrollMode="KeepItemsInView"
+            SelectedItem="{Binding CurrentTabVm, Mode=TwoWay}"
+            SelectionMode="Single"
+            VerticalScrollBarVisibility="Never">
+                <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="local:TabViewModel">
+                            <Grid RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="3" />
+                                </Grid.RowDefinitions>
+                            <Label
+                        x:Name="TitleLabel"
+                        Grid.Row="0"
+                        Padding="15,0"
+                        FontAttributes="Bold"
+                        FontSize="Small"
+                        HeightRequest="0"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding Title}"
+                        TextColor="White"
+                        VerticalTextAlignment="Center" >
+                            </Label>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup Name="CommonStates">
+                                    <VisualState Name="Normal" />
+                                    <VisualState Name="Selected">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="WhiteSmoke" />
+                                            <Setter TargetName="TitleLabel" Property="Label.TextColor" Value="Black" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            <ActivityIndicator Grid.Row="2" IsVisible="{Binding IsBusy}" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Scale="1" 
+                               IsRunning="{Binding IsBusy}"
+                               Color="#FF0000"/>
+            <CarouselView            
+                Grid.Row="2"
+                CurrentItem="{Binding CurrentTabVm, Mode=TwoWay}"
+                CurrentItemChanged="CarouselView_CurrentItemChanged"
+                HorizontalScrollBarVisibility="Never"
+                IsScrollAnimated="True"
+                IsSwipeEnabled="True"
+                ItemsSource="{Binding TabVms}"
+                VerticalScrollBarVisibility="Never">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate x:DataType="local:TabViewModel">
+                        <Grid Margin="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <ListView 
+                                ItemsSource="{Binding Content}" 
+                                Grid.Row="0" 
+                                HasUnevenRows="true" 
+                                CachingStrategy="RetainElement" 
+                                Margin="0,0,0,0" 
+                                SelectedItem="{Binding SelectedItem, Mode=TwoWay}" 
+                                
+                                SeparatorColor="#484848">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate x:DataType="model:TabModel" >
+                                        <ViewCell>
+                                            <Frame Padding="0" BackgroundColor="WhiteSmoke">
+                                                <Grid HorizontalOptions="FillAndExpand" Padding="15">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="20"/>
+                                                        <RowDefinition Height="20"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="70"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Frame Grid.RowSpan="2" 
+                                                       Grid.Column="0"
+                                                       Padding="0"
+                                                       HorizontalOptions="Start"
+                                                       VerticalOptions="Center"
+                                                       CornerRadius="100"
+                                                       IsClippedToBounds="True"
+                                                       HeightRequest="60"
+                                                       WidthRequest="60">
+                                                        <Image Source="{Binding Image}" Aspect="AspectFill" />
+                                                    </Frame>
+                                                    <Label Text="{Binding Name}" HorizontalOptions="Start" Grid.Row="0" Grid.Column="1" TextColor="Black" FontAttributes="Bold"/>
+                                                    <Label HorizontalOptions="Start" Grid.Row="1" Grid.Column="1">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span
+                                                                FontAttributes="Bold"
+                                                                TextColor="Black"
+                                                                FontFamily="MuliBlack"
+                                                                Text="Nat : " />
+                                                                <Span
+                                                                FontAttributes="None"
+                                                                TextColor="Black"
+                                                                FontFamily="MuliBlack"
+                                                                Text="{Binding OtherName}" />
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                    <Label Text="{Binding Desc}" Grid.RowSpan="2" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontAttributes="Bold"/>
+                                                </Grid>
+                                            </Frame>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                                <ListView.Behaviors>
+                                    <behaviors:EventToCommandBehavior EventName="ItemSelected" Command="{Binding SelectItemCommand}" Converter="{StaticResource SelectedItemConverter}" />
+                                </ListView.Behaviors>
+                            </ListView>
+                        </Grid>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
+             xmlns:homeControl="clr-namespace:FOne_MobileApp.Controls.HomeControls"
+             x:Class="FOne_MobileApp.Controls.StatsView">
+    <ContentView.Resources>
+    <ResourceDictionary>
+
+        <Style x:Key="SectionStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="Medium" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="Margin" Value="0, 12" />
+        </Style>
+
+    </ResourceDictionary>
+</ContentView.Resources>
+
+<ContentView.Content>
+        <ScrollView Grid.Row="0">
+            <StackLayout>
+                <Frame Padding="5,1,5,15" Margin="0,-7">
+                    <Frame.Background>
+                        <LinearGradientBrush EndPoint="1,2">
+                            <GradientStop Color="#FF0000" Offset="1" />
+                            <GradientStop Color="#FF0000" Offset="0.6" />
+                        </LinearGradientBrush>
+                    </Frame.Background>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="0" Orientation="Horizontal">
+                          
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+                <Frame Margin="0,0" Padding="5">
+                    <Frame.Background>
+                        <LinearGradientBrush EndPoint="1,1">
+                            <GradientStop Color="#FFF" Offset="0.6" />
+                            <GradientStop Color="#FFF" Offset="0.6" />
+                            <GradientStop Color="#FFF" Offset="1" />
+                            <GradientStop Color="#484848" Offset="0.1" />
+                            <GradientStop Color="#484848" Offset="0.1" />
+                            <GradientStop Color="#FF0000" Offset="0.1" />
+                            <GradientStop Color="#FF0000" Offset="0.1" />
+                        </LinearGradientBrush>
+                    </Frame.Background>
+                    <Grid Padding="5"
+                ColumnDefinitions="*, auto, auto"
+                ColumnSpacing="0"
+                HorizontalOptions="FillAndExpand"
+                RowDefinitions="auto, auto, auto, auto, *"
+                VerticalOptions="FillAndExpand">
+                    <StackLayout
+                    Grid.ColumnSpan="3"
+                    Grid.Row="0"
+                    Margin="0,5"
+
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal">
+                            <Frame Margin="0,0" Padding="5">
+                                <Frame.Background>
+                                    <LinearGradientBrush EndPoint="1,1">
+                                        <GradientStop Color="#FFF" Offset="0.6" />
+                                        <GradientStop Color="#FFF" Offset="0.6" />
+                                        <GradientStop Color="#FFF" Offset="1" />
+                                        <GradientStop Color="#484848" Offset="0.1" />
+                                        <GradientStop Color="#484848" Offset="0.1" />
+                                        <GradientStop Color="#FF0000" Offset="0.1" />
+                                        <GradientStop Color="#FF0000" Offset="0.1" />
+                                    </LinearGradientBrush>
+                                </Frame.Background>
+                            </Frame>
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span
+                                    
+                                    FontAttributes="Bold"
+                                    TextColor="Black"
+                                    FontSize="Subtitle"
+                                    FontFamily="MuliBlack"
+                                    Text="Sélectionnez une année :" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                    <Grid
+                    Grid.Row="1"
+                    Grid.ColumnSpan="3"
+                    Margin="10,-10,20,20"
+                    ColumnDefinitions="*, auto"
+                    RowDefinitions="auto, auto">
+                </Grid>
+                <homeControl:SeasonListCarouselView
+                    Grid.Row="1"
+                    Grid.ColumnSpan="3"
+                    VerticalOptions="Start"/>
+                <homeControl:EventTypeListCarouselView
+                    Grid.Row="2"
+                    Grid.ColumnSpan="3"
+                    VerticalOptions="Start"/>
+            </Grid>
+            </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>
