@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FOne_MobileApp.Views.MainPage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             android:TabbedPage.IsSwipePagingEnabled="False"
+             xmlns:control="clr-namespace:FOne_MobileApp.Controls">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Image Source="logoicon.png" WidthRequest="35" HeightRequest="35" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+            <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span
+                                    FontAttributes="Bold"
+                                    TextColor="White"
+                                    FontSize="16"
+                                    FontFamily="MuliBlack"
+                                    Text="Formula" />
+                        <Span
+                                    FontAttributes="Bold"
+                                    TextColor="Red"
+                                    FontSize="16"
+                                    FontFamily="MuliBlack"
+                                    Text="News" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Image Source="settings.png" VerticalOptions="CenterAndExpand" HorizontalOptions="End" Margin="15"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ControlTemplate
+		        x:Key="AboutTabTemplate">
+                <Grid
+			        RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Image
+				        Grid.Row="0"
+				        VerticalOptions="Center"
+				        HorizontalOptions="Center"
+				        WidthRequest="24"
+				        HeightRequest="24"
+				        Source="{TemplateBinding CurrentIcon}" />
+                    <!--<Label
+				        Grid.Row="1"
+				        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Margin="0,0,0,0"
+				        FontSize="{TemplateBinding FontSize}"
+				        Text="{TemplateBinding Text}"
+				        TextColor="{TemplateBinding CurrentTextColor}" />-->
+                </Grid>
+            </ControlTemplate>
+
+            <ControlTemplate
+                x:Key="HomeTabTemplate">
+                <Grid>
+                    <ImageButton
+                        InputTransparent="True"
+                        Source="{TemplateBinding CurrentIcon}"
+                        Padding="10"
+                        HorizontalOptions="Center"
+                        BackgroundColor="#FF0000"
+                        HeightRequest="60"
+                        WidthRequest="60"
+                        Margin="6">
+                        <ImageButton.CornerRadius>
+                            <OnPlatform x:TypeArguments="x:Int32">
+                                <On Platform="iOS" Value="30"/>
+                                <On Platform="Android" Value="60"/>
+                                <On Platform="UWP" Value="36"/>
+                            </OnPlatform>
+                        </ImageButton.CornerRadius>
+                        <ImageButton.IsVisible>
+                            <OnPlatform x:TypeArguments="x:Boolean">
+                                <On Platform="Android, iOS, UWP">True</On>
+                                <On Platform="macOS">False</On>
+                            </OnPlatform>
+                        </ImageButton.IsVisible>
+                    </ImageButton>
+                    <BoxView
+                        InputTransparent="True"
+                        HorizontalOptions="Center"
+                        CornerRadius="30"
+                        BackgroundColor="#FF0000"
+                        HeightRequest="60"
+                        WidthRequest="60"
+                        Margin="6">
+                        <BoxView.IsVisible>
+                            <OnPlatform x:TypeArguments="x:Boolean">
+                                <On Platform="Android, iOS, UWP">False</On>
+                                <On Platform="macOS">True</On>
+                            </OnPlatform>
+                        </BoxView.IsVisible>
+                    </BoxView>
+                </Grid>
+            </ControlTemplate>
+            <Style
+		        x:Key="TabItemStyle"
+		        TargetType="xct:TabViewItem">
+            <Setter
+			        Property="FontSize"
+			        Value="15" />
+            <Setter
+			        Property="TextColor"
+			        Value="WhiteSmoke" />
+            <Setter
+			        Property="TextColorSelected"
+			        Value="#FF0000" />
+        </Style>
+
+        <Style
+		        x:Key="CustomTabStyle"
+		        TargetType="xct:TabView">
+            <Setter
+			        Property="IsTabTransitionEnabled"
+			        Value="True" />
+            <Setter
+			        Property="TabStripHeight"
+			        Value="54" />
+            <Setter
+			        Property="TabContentBackgroundColor"
+			        Value="WhiteSmoke" />
+            <Setter
+			        Property="TabStripPlacement"
+			        Value="Bottom" />
+             
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <xct:TabView Style="{StaticResource CustomTabStyle}"
+                IsTabTransitionEnabled ="False" 
+                IsSwipeEnabled="False">
+            <xct:TabView.TabStripBackgroundView>
+                <BoxView
+                        Color="#484848"
+                        CornerRadius="36, 36, 0, 0"/>
+            </xct:TabView.TabStripBackgroundView>
+            <xct:TabViewItem 
+                    IconSelected="homeSelected.png"
+                    Icon="home.png"
+                    Text="Home"
+                    ControlTemplate="{StaticResource AboutTabTemplate}"
+                    Style="{StaticResource TabItemStyle}">
+                <control:HomeView/>
+            </xct:TabViewItem>
+            <xct:TabViewItem
+                    IconSelected="bloggingSelected.png"
+                    Icon="blogging.png"
+                    Text="Blog"
+                    ControlTemplate="{StaticResource AboutTabTemplate}"
+                    Style="{StaticResource TabItemStyle}">
+                <control:BlogView/>
+            </xct:TabViewItem>
+            <xct:TabViewItem
+                    IconSelected="graphSelected.png"
+                    Icon="graph.png"
+                    Text="Stats"
+                    ControlTemplate="{StaticResource AboutTabTemplate}"
+                    Style="{StaticResource TabItemStyle}">
+                <control:StatsView/>
+            </xct:TabViewItem>
+        </xct:TabView>
+    </Grid>
+</ContentPage>
