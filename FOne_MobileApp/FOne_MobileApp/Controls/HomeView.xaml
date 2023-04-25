@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FOne_MobileApp.Controls.HomeView">
+  <ContentView.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame Padding="5,1,5,15" Margin="0,-7">
+                    <Frame.Background>
+                        <LinearGradientBrush EndPoint="1,2">
+                            <GradientStop Color="#FF0000" Offset="1" />
+                            <GradientStop Color="#FF0000" Offset="0.6" />
+                        </LinearGradientBrush>
+                    </Frame.Background>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="0" Orientation="Horizontal">
+
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+                <Frame Padding="5">
+                    <Frame.Background>
+                        <LinearGradientBrush EndPoint="1,1">
+                            <GradientStop Color="#FFF" Offset="0.6" />
+                            <GradientStop Color="#FFF" Offset="0.6" />
+                            <GradientStop Color="#FFF" Offset="1" />
+                            <GradientStop Color="#484848" Offset="0.1" />
+                            <GradientStop Color="#484848" Offset="0.1" />
+                            <GradientStop Color="#FF0000" Offset="0.1" />
+                            <GradientStop Color="#FF0000" Offset="0.1" />   
+                        </LinearGradientBrush>
+                    </Frame.Background>
+
+                    <StackLayout  Margin="0,5" HorizontalOptions="Center" Padding="5">
+
+                        <StackLayout>
+                            <Frame   
+                            BorderColor="Red"  
+                            CornerRadius="5"  
+                           BackgroundColor="#484848"  
+                           HasShadow="True"  
+                           Padding="10"  
+                           Margin="10,10,10,5">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Grid.Row="0"    
+                                       Text="Prochaine course :"  
+                                       LineBreakMode="TailTruncation" 
+                                       TextColor="White"
+                                       FontAttributes="Bold"   
+                                       VerticalOptions="End" />
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup Name="CommonStates">
+                                            <VisualState Name="Normal" />
+                                            <VisualState Name="Selected">
+                                                <VisualState.Setters>
+                                                    <Setter Property="BackgroundColor" Value="Transparent" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout>
+                            <Frame   
+                            BorderColor="Red"                   
+                            CornerRadius="5"  
+                           BackgroundColor="#484848"  
+                           HasShadow="True"  
+                            Padding="10"  
+                           Margin="10,-5,10,0">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="25" />
+                                        <RowDefinition Height="20" />
+                                        <RowDefinition Height="25" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="120" />
+                                        <ColumnDefinition Width="auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0"
+                                           Grid.RowSpan="3" 
+                                           Source="{Binding ImageCircuit}"   
+                                           Aspect="AspectFill"  
+                                           HeightRequest="60"   
+                                           WidthRequest="60" />
+
+                                    <Label Grid.Column="1" Grid.Row="0"  
+                               Text="{Binding Circuit.CircuitName}"   
+                               FontAttributes="Bold"  
+                               TextColor="white"
+                               LineBreakMode="TailTruncation" />
+                                    <Label Grid.Column="1" Grid.Row="1"    
+                               Text="{Binding Circuit.Location.Country}"  
+                               LineBreakMode="TailTruncation" 
+                               TextColor="white"
+                               FontAttributes="Italic"   
+                               VerticalOptions="End" />
+                                    <Label Grid.Column="1" Grid.Row="2"    
+                               Text="{Binding Circuit.Location.Locality}"  
+                               LineBreakMode="TailTruncation" 
+                               TextColor="white"
+                               FontAttributes="Italic"   
+                               VerticalOptions="End" />
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Frame   
+                            BorderColor="Red"  
+                            CornerRadius="5"  
+                           BackgroundColor="#484848"  
+                           HasShadow="True"  
+                           Padding="10"  
+                           Margin="10,10,10,5">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Grid.Row="0"    
+                                       Text="Résultat Dernière course :"  
+                                       LineBreakMode="TailTruncation" 
+                                       TextColor="White"
+                                       FontAttributes="Bold"   
+                                       VerticalOptions="End" />
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup Name="CommonStates">
+                                            <VisualState Name="Normal" />
+                                            <VisualState Name="Selected">
+                                                <VisualState.Setters>
+                                                    <Setter Property="BackgroundColor" Value="Transparent" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout AbsoluteLayout.LayoutBounds=".5,1,.5,.1">
+                            <Frame   
+                            BorderColor="Red"  
+                            CornerRadius="5"  
+                            BackgroundColor="#484848"
+                            HasShadow="True"  
+                            Padding="10"  
+                            Margin="10,-5,10,0">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="15" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Label Text="{Binding Race.RaceName}" Grid.Column="0" Grid.Row="0" TextColor="White" FontAttributes="Bold"/>
+                                    <ListView 
+                                        ItemsSource="{Binding Results}" 
+                                        Grid.Row="1" 
+                                        HasUnevenRows="true" 
+                                        CachingStrategy="RetainElement" 
+                                        Margin="0,0,0,0"    
+                                        HeightRequest="200"
+                                        SeparatorColor="White">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate >
+                                                <ViewCell>
+                                                    <Frame Padding="0" BackgroundColor="#484848">
+                                                        <Grid HorizontalOptions="FillAndExpand" Padding="15">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="20"/>
+                                                                <RowDefinition Height="20"/>
+                                                            </Grid.RowDefinitions>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="70"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Label Text="{Binding Position}" HorizontalOptions="Start" Grid.Row="0" Grid.Column="0" TextColor="White" FontAttributes="Bold"/>
+                                                            <Label Grid.Row="0" Grid.Column="1">
+                                                                <Label.FormattedText>
+                                                                    <FormattedString>
+                                                                        <Span
+                                                                            FontAttributes="Bold"
+                                                                            TextColor="White"
+                                                                            FontSize="16"
+                                                                            FontFamily="MuliBlack"
+                                                                            Text="{Binding Driver.GivenName}" />
+                                                                        <Span
+                                                                            FontAttributes="Bold"
+                                                                            TextColor="White"
+                                                                            FontSize="16"
+                                                                            FontFamily="MuliBlack"
+                                                                            Text=" " />
+                                                                        <Span
+                                                                            FontAttributes="Bold"
+                                                                            TextColor="White"
+                                                                            FontSize="16"
+                                                                            FontFamily="MuliBlack"
+                                                                            Text="{Binding Driver.FamilyName}" />
+                                                                    </FormattedString>
+                                                                </Label.FormattedText>
+                                                            </Label>
+                                                            <Label Text="{Binding Constructor.Name}" HorizontalOptions="Start" Grid.Row="1" Grid.Column="0" TextColor="White" FontAttributes="Bold"/>
+                                                            <Label Text="{Binding Status}" HorizontalOptions="Start" Grid.Row="1" Grid.Column="1" TextColor="White" FontAttributes="Bold"/>
+                                                        </Grid>
+                                                    </Frame>
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+
+                                    </ListView>
+
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup Name="CommonStates">
+                                            <VisualState Name="Normal" />
+                                            <VisualState Name="Selected">
+                                                <VisualState.Setters>
+                                                    <Setter Property="BackgroundColor" Value="Transparent" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Frame   
+                            BorderColor="Red"  
+                            CornerRadius="5"  
+                           BackgroundColor="#484848"  
+                           HasShadow="True"  
+                           Padding="10"  
+                           Margin="10,10,10,5">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Grid.Row="0"    
+                                       Text="Dernières actualités :"  
+                                       LineBreakMode="TailTruncation" 
+                                       TextColor="White"
+                                       FontAttributes="Bold"   
+                                       VerticalOptions="End" />
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup Name="CommonStates">
+                                            <VisualState Name="Normal" />
+                                            <VisualState Name="Selected">
+                                                <VisualState.Setters>
+                                                    <Setter Property="BackgroundColor" Value="Transparent" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout>
+                            <Frame BorderColor="Red"  
+                                   CornerRadius="5"  
+                                   BackgroundColor="#484848"  
+                                   HasShadow="True"  
+                                   Padding="10"                                    
+                                    Margin="10,-5,10,50">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="100" />
+                                        <RowDefinition Height="100" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="80" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.RowSpan="2" 
+                                           Grid.ColumnSpan="2" 
+                                           Source="{Binding Blog.Image}"   
+                                           Aspect="AspectFill"  
+                                           HeightRequest="60"   
+                                           WidthRequest="60" />
+                                    <Label Grid.Column="0" Grid.Row="2"  
+                                           Text="{Binding Blog.Title}"   
+                                           FontAttributes="Bold"  
+                                           TextColor="white"
+                                           LineBreakMode="TailTruncation" />
+                                    <Label Grid.Column="0" Grid.Row="3"    
+                                           Text="{Binding Blog.SubTitle}"  
+                                           LineBreakMode="TailTruncation" 
+                                           TextColor="white"
+                                           FontAttributes="Italic"   
+                                           VerticalOptions="End" />
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup Name="CommonStates">
+                                            <VisualState Name="Normal" />
+                                            <VisualState Name="Selected">
+                                                <VisualState.Setters>
+                                                    <Setter Property="BackgroundColor" Value="Transparent" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </Grid>
+                            </Frame>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SelectItemCommand}" CommandParameter="{Binding Blog}"/>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>
