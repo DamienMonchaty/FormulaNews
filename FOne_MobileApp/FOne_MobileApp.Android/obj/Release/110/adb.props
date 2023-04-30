@@ -1,2 +1,2 @@
-AdbTarget=-s R5CT921MBWD
+AdbTarget=-s emulator-5554
 AdbOptions=

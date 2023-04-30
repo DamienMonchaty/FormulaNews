@@ -23,15 +23,7 @@ namespace FOne_MobileApp.Models
         public string Time { get; set; }
         [JsonProperty(PropertyName = "Laps")]
         public List<Lap> Laps { get; set; }
-        [JsonProperty(PropertyName = "FirstPractice")]
-        public FirstPractice FirstPractice { get; set; }
         [JsonProperty(PropertyName = "Results")]
         public List<Result> Results { get; set; }
-        [JsonProperty(PropertyName = "SecondPractice")]
-        public SecondPractice SecondPractice { get; set; }
-        [JsonProperty(PropertyName = "ThirdPractice")]
-        public ThirdPractice ThirdPractice { get; set; }
-        [JsonProperty(PropertyName = "Qualifying")]
-        public Qualifying Qualifying { get; set; }
     }
 }

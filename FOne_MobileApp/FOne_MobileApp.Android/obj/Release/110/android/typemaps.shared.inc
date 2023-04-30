@@ -25,68 +25,68 @@
 	.section	.rodata.map_aname.4,"aMS",@progbits,1
 	.type	.L.map_aname.4, @object
 .L.map_aname.4:
-	.asciz	"FOne_MobileApp.Android"
-	.size	.L.map_aname.4, 23
+	.asciz	"Xamarin.AndroidX.ViewPager"
+	.size	.L.map_aname.4, 27
 
 	.section	.rodata.map_aname.5,"aMS",@progbits,1
 	.type	.L.map_aname.5, @object
 .L.map_aname.5:
-	.asciz	"Xamarin.AndroidX.ViewPager"
-	.size	.L.map_aname.5, 27
+	.asciz	"Xamarin.AndroidX.CustomView"
+	.size	.L.map_aname.5, 28
 
 	.section	.rodata.map_aname.6,"aMS",@progbits,1
 	.type	.L.map_aname.6, @object
 .L.map_aname.6:
-	.asciz	"Xamarin.AndroidX.CustomView"
-	.size	.L.map_aname.6, 28
+	.asciz	"Xamarin.AndroidX.AppCompat.AppCompatResources"
+	.size	.L.map_aname.6, 46
 
 	.section	.rodata.map_aname.7,"aMS",@progbits,1
 	.type	.L.map_aname.7, @object
 .L.map_aname.7:
-	.asciz	"Xamarin.AndroidX.AppCompat.AppCompatResources"
-	.size	.L.map_aname.7, 46
+	.asciz	"Xamarin.AndroidX.Loader"
+	.size	.L.map_aname.7, 24
 
 	.section	.rodata.map_aname.8,"aMS",@progbits,1
 	.type	.L.map_aname.8, @object
 .L.map_aname.8:
-	.asciz	"Xamarin.AndroidX.Loader"
-	.size	.L.map_aname.8, 24
+	.asciz	"Xamarin.AndroidX.SavedState"
+	.size	.L.map_aname.8, 28
 
 	.section	.rodata.map_aname.9,"aMS",@progbits,1
 	.type	.L.map_aname.9, @object
 .L.map_aname.9:
-	.asciz	"Xamarin.AndroidX.SavedState"
-	.size	.L.map_aname.9, 28
+	.asciz	"Xamarin.Google.Android.Material"
+	.size	.L.map_aname.9, 32
 
 	.section	.rodata.map_aname.10,"aMS",@progbits,1
 	.type	.L.map_aname.10, @object
 .L.map_aname.10:
-	.asciz	"Xamarin.Google.Android.Material"
-	.size	.L.map_aname.10, 32
+	.asciz	"Xamarin.AndroidX.Lifecycle.Common"
+	.size	.L.map_aname.10, 34
 
 	.section	.rodata.map_aname.11,"aMS",@progbits,1
 	.type	.L.map_aname.11, @object
 .L.map_aname.11:
-	.asciz	"Xamarin.AndroidX.Lifecycle.Common"
-	.size	.L.map_aname.11, 34
+	.asciz	"Xamarin.CommunityToolkit"
+	.size	.L.map_aname.11, 25
 
 	.section	.rodata.map_aname.12,"aMS",@progbits,1
 	.type	.L.map_aname.12, @object
 .L.map_aname.12:
-	.asciz	"Xamarin.CommunityToolkit"
-	.size	.L.map_aname.12, 25
+	.asciz	"Xamarin.Forms.Platform.Android"
+	.size	.L.map_aname.12, 31
 
 	.section	.rodata.map_aname.13,"aMS",@progbits,1
 	.type	.L.map_aname.13, @object
 .L.map_aname.13:
-	.asciz	"Xamarin.Forms.Platform.Android"
-	.size	.L.map_aname.13, 31
+	.asciz	"Xamarin.AndroidX.Activity"
+	.size	.L.map_aname.13, 26
 
 	.section	.rodata.map_aname.14,"aMS",@progbits,1
 	.type	.L.map_aname.14, @object
 .L.map_aname.14:
-	.asciz	"Xamarin.AndroidX.Activity"
-	.size	.L.map_aname.14, 26
+	.asciz	"FOne_MobileApp.Android"
+	.size	.L.map_aname.14, 23
 
 	.section	.rodata.map_aname.15,"aMS",@progbits,1
 	.type	.L.map_aname.15, @object

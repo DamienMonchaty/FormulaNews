@@ -156,32 +156,30 @@
                                 </Grid>
                             </Frame>
                         </StackLayout>
-                        <StackLayout AbsoluteLayout.LayoutBounds=".5,1,.5,.1">
+                        <StackLayout>
                             <Frame   
                             BorderColor="Red"  
                             CornerRadius="5"  
-                            BackgroundColor="#484848"
+                            BackgroundColor="White"
                             HasShadow="True"  
-                            Padding="10"  
+                            Padding="5"  
                             Margin="10,-5,10,0">
                                 <Grid>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="15" />
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
-                                    <Label Text="{Binding Race.RaceName}" Grid.Column="0" Grid.Row="0" TextColor="White" FontAttributes="Bold"/>
                                     <ListView 
                                         ItemsSource="{Binding Results}" 
-                                        Grid.Row="1" 
+                                        Grid.Row="0" 
                                         HasUnevenRows="true" 
                                         CachingStrategy="RetainElement" 
                                         Margin="0,0,0,0"    
                                         HeightRequest="200"
-                                        SeparatorColor="White">
+                                        SeparatorColor="#484848">
                                         <ListView.ItemTemplate>
                                             <DataTemplate >
                                                 <ViewCell>
-                                                    <Frame Padding="0" BackgroundColor="#484848">
+                                                    <Frame Padding="0"  BackgroundColor="White">
                                                         <Grid HorizontalOptions="FillAndExpand" Padding="15">
                                                             <Grid.RowDefinitions>
                                                                 <RowDefinition Height="20"/>
@@ -192,33 +190,33 @@
                                                                 <ColumnDefinition Width="*"/>
                                                                 <ColumnDefinition Width="*"/>
                                                             </Grid.ColumnDefinitions>
-                                                            <Label Text="{Binding Position}" HorizontalOptions="Start" Grid.Row="0" Grid.Column="0" TextColor="White" FontAttributes="Bold"/>
+                                                            <Label Text="{Binding Position}" HorizontalOptions="Start" Grid.Row="0" Grid.Column="0" TextColor="#484848" FontAttributes="Bold"/>
                                                             <Label Grid.Row="0" Grid.Column="1">
                                                                 <Label.FormattedText>
                                                                     <FormattedString>
                                                                         <Span
                                                                             FontAttributes="Bold"
-                                                                            TextColor="White"
+                                                                            TextColor="#484848"
                                                                             FontSize="16"
                                                                             FontFamily="MuliBlack"
                                                                             Text="{Binding Driver.GivenName}" />
                                                                         <Span
                                                                             FontAttributes="Bold"
-                                                                            TextColor="White"
+                                                                            TextColor="#484848"
                                                                             FontSize="16"
                                                                             FontFamily="MuliBlack"
                                                                             Text=" " />
                                                                         <Span
                                                                             FontAttributes="Bold"
-                                                                            TextColor="White"
+                                                                            TextColor="#484848"
                                                                             FontSize="16"
                                                                             FontFamily="MuliBlack"
                                                                             Text="{Binding Driver.FamilyName}" />
                                                                     </FormattedString>
                                                                 </Label.FormattedText>
                                                             </Label>
-                                                            <Label Text="{Binding Constructor.Name}" HorizontalOptions="Start" Grid.Row="1" Grid.Column="0" TextColor="White" FontAttributes="Bold"/>
-                                                            <Label Text="{Binding Status}" HorizontalOptions="Start" Grid.Row="1" Grid.Column="1" TextColor="White" FontAttributes="Bold"/>
+                                                            <Label Text="{Binding Constructor.Name}" HorizontalOptions="Start" Grid.Row="1" Grid.Column="0" TextColor="#484848" FontAttributes="Bold"/>
+                                                            <Label Text="{Binding Status}" HorizontalOptions="Start" Grid.Row="1" Grid.Column="1" TextColor="#484848" FontAttributes="Bold"/>
                                                         </Grid>
                                                     </Frame>
                                                 </ViewCell>
@@ -243,6 +241,7 @@
 
                         <StackLayout>
                             <Frame   
+                               AutomationId="frame_blogDetails"
                             BorderColor="Red"  
                             CornerRadius="5"  
                            BackgroundColor="#484848"  

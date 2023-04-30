@@ -52,7 +52,7 @@
         <DataTemplate x:Key="FirstItem" >
             <ViewCell>
                 <StackLayout>
-                    <Frame   
+                    <Frame 
                             BorderColor="Red"  
                             CornerRadius="5"  
                            BackgroundColor="#484848"  

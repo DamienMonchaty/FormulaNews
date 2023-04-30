@@ -146,6 +146,7 @@
                         CornerRadius="36, 36, 0, 0"/>
             </xct:TabView.TabStripBackgroundView>
             <xct:TabViewItem 
+                    AutomationId="btn_Home"
                     IconSelected="homeSelected.png"
                     Icon="home.png"
                     Text="Home"
@@ -154,6 +155,7 @@
                 <control:HomeView/>
             </xct:TabViewItem>
             <xct:TabViewItem
+                    AutomationId="btn_Blog"
                     IconSelected="bloggingSelected.png"
                     Icon="blogging.png"
                     Text="Blog"
@@ -162,6 +164,7 @@
                 <control:BlogView/>
             </xct:TabViewItem>
             <xct:TabViewItem
+                    AutomationId="btn_Result"
                     IconSelected="graphSelected.png"
                     Icon="graph.png"
                     Text="Stats"

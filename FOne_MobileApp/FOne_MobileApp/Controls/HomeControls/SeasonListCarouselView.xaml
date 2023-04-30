@@ -12,6 +12,7 @@
             </Grid.RowDefinitions>
 
             <CollectionView
+            AutomationId="lbl_Year"
             x:Name="CustomTabsView"
             Grid.Row="1"
             HorizontalScrollBarVisibility="Never"
@@ -34,31 +35,17 @@
                                 <RowDefinition Height="1" />
                             </Grid.RowDefinitions>
                             <Label
-                        x:Name="TitleLabel"
-                        Grid.Row="0"
-                        Padding="15,0"
-                        FontAttributes="Bold"
-                        TextColor="#484848"
-                        FontSize="Small"
-                        HeightRequest="50"
-                        HorizontalTextAlignment="Center"
-                        Text="{Binding Year}"                    
-                        VerticalTextAlignment="Center">
+                                x:Name="TitleLabel"
+                                Grid.Row="0"
+                                Padding="15,0"
+                                FontAttributes="Bold"
+                                TextColor="#484848"
+                                FontSize="Small"
+                                HeightRequest="50"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding Year}"                    
+                                VerticalTextAlignment="Center">
                             </Label>
-                            <!--<Frame HorizontalOptions="Start" CornerRadius="10" WidthRequest="40" HeightRequest="40" Padding="0">
-                                <Label
-                                    x:Name="TitleLabel"
-                                    Grid.Row="0"
-                                    Padding="15,0"
-                                    FontAttributes="Bold"
-                                    TextColor="#484848"
-                                    FontSize="Small"
-                                    HeightRequest="50"
-                                    HorizontalTextAlignment="Center"
-                                    Text="{Binding Year}"                    
-                                    VerticalTextAlignment="Center"> 
-                                </Label>
-                            </Frame>-->
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup Name="CommonStates">  
                                     <VisualState Name="Normal" />

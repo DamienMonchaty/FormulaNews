@@ -39,6 +39,7 @@
                                     <RowDefinition Height="3" />
                                 </Grid.RowDefinitions>
                             <Label
+                        AutomationId="lbl_Item"
                         x:Name="TitleLabel"
                         Grid.Row="0"
                         Padding="15,0"
@@ -96,7 +97,7 @@
                                 <ListView.ItemTemplate>
                                     <DataTemplate x:DataType="model:TabModel" >
                                         <ViewCell>
-                                            <Frame Padding="0" BackgroundColor="WhiteSmoke">
+                                            <Frame Padding="0" BackgroundColor="WhiteSmoke" AutomationId="frame_Card">
                                                 <Grid HorizontalOptions="FillAndExpand" Padding="15">
                                                     <Grid.RowDefinitions>
                                                         <RowDefinition Height="20"/>
