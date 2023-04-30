@@ -109,7 +109,7 @@ namespace FOne_MobileApp.ViewModels
                         Name = x.GivenName + " " + x.FamilyName, 
                         OtherName = x.Nationality, 
                         Desc = x.PermanentNumber,
-                        Image = ImageSource.FromFile(Regex.Replace(x.GivenName, @"\s+", "") + ".png"),
+                        Image = ImageSource.FromFile("racer.png"),
                         Year = "2023"
                     });
                 });
@@ -144,7 +144,7 @@ namespace FOne_MobileApp.ViewModels
                 var r5 = ApiHelper.GetConstructorsBySeasonYearAsync("2023").GetAwaiter().GetResult();
                 r5.data.ConstructorTable.Constructors.ForEach(x =>
                 {
-                    tvmTeams.Content.Add(new TabModel() { Name = x.Name, OtherName = x.Nationality, Image = ImageSource.FromFile(Regex.Replace(x.Name, @"\s+", "") + ".png")});
+                    tvmTeams.Content.Add(new TabModel() { Name = x.Name, OtherName = x.Nationality, Image = ImageSource.FromFile("constructor.png") });
                 });
             });
             TabVms.Add(tvmTeams);
@@ -159,7 +159,7 @@ namespace FOne_MobileApp.ViewModels
                         OtherName = r.Driver.Nationality,
                         Desc = r.position,
                         OtherDesc = r.points,
-                        Image = ImageSource.FromFile(Regex.Replace(r.Driver.GivenName, @"\s+", "") + ".png"),
+                        Image = ImageSource.FromFile("racer.png"),
                     });
                 }));
             });
@@ -169,7 +169,7 @@ namespace FOne_MobileApp.ViewModels
             Task.Run(() => {
                 var r5 = ApiHelper.GetConstructorStandingsBySeasonYearAsync("2023").GetAwaiter().GetResult();
                 r5.data.StandingsTable.StandingsLists.ForEach(x => x.ConstructorStandings.ForEach(r => {
-                    tvmConstructorResults.Content.Add(new TabModel() { Name = r.Constructor.Name, OtherName = r.Constructor.Nationality, Desc = r.position, OtherDesc = r.points, Image = ImageSource.FromFile(Regex.Replace(r.Constructor.Name, @"\s+", "") + ".png") });
+                    tvmConstructorResults.Content.Add(new TabModel() { Name = r.Constructor.Name, OtherName = r.Constructor.Nationality, Desc = r.position, OtherDesc = r.points, Image = ImageSource.FromFile("constructor.png") });
                 }));
             });
             TabVms.Add(tvmConstructorResults);
@@ -180,19 +180,13 @@ namespace FOne_MobileApp.ViewModels
 
             SelectedSeason = s;
 
-            Seasons = new ObservableCollection<Season>
+            Seasons = new ObservableCollection<Season>();
+            Seasons.Add(s);
+            for (var date = 2022; date >= 1950; date--)
             {
-                s,
-                new Season { Year="2022"},
-                new Season { Year="2021"},
-                new Season { Year="2020"},
-                new Season { Year="2019"},
-                new Season { Year="2018"},
-                new Season { Year="2017"},
-                new Season { Year="2016"},
-                new Season { Year="2015"}
-            };
-
+                Seasons.Add(new Season { Year = date.ToString() });
+            }
+                  
             MessagingCenter.Subscribe<StatsViewModel>(this, "Update listview", (sender) =>
             {
                 RefreshData();
@@ -252,18 +246,11 @@ namespace FOne_MobileApp.ViewModels
                     var r5 = ApiHelper.GetDriversBySeasonYearAsync(year).GetAwaiter().GetResult();
                     r5.data.DriverTable.Drivers.ForEach(x =>
                     {
-                        //IDictionary<string, string> map = new Dictionary<string, string>() {
-                        //    { @"\s+", "" },
-                        //    { @"é", "e" },
-                        //    { @"ü", "u" },
-                        //};
-                        //var regex = new Regex(String.Join("|", map.Keys));
-
                         tvmDrivers.Content.Add(new TabModel() {
                             Name = x.GivenName + " " + x.FamilyName,
                             OtherName = x.Nationality,
                             Desc = x.PermanentNumber,
-                            Image = ImageSource.FromFile(x.GivenName + ".png"),
+                            Image = ImageSource.FromFile("racer.png"),
                             Year = year
                         });
                     });
@@ -275,7 +262,7 @@ namespace FOne_MobileApp.ViewModels
                             new TabModel() { 
                                 Name = x.RaceName, 
                                 OtherName = x.Circuit.Location.Locality, 
-                                Image = ImageSource.FromFile(Regex.Replace(x.Circuit.Location.Locality, @"\s+", "") + ".png"),
+                                Image = ImageSource.FromFile("racescircuit.png"),
                                 Round = x.Round,
                                 Year = year
                             });
@@ -284,7 +271,7 @@ namespace FOne_MobileApp.ViewModels
                     var r7 = ApiHelper.GetConstructorsBySeasonYearAsync(year).GetAwaiter().GetResult();
                     r7.data.ConstructorTable.Constructors.ForEach(x =>
                     {
-                        tvmTeams.Content.Add(new TabModel() { Name = x.Name, OtherName = x.Nationality, Image = ImageSource.FromFile(Regex.Replace(x.Name, @"\s+", "") + ".png") });
+                        tvmTeams.Content.Add(new TabModel() { Name = x.Name, OtherName = x.Nationality, Image = ImageSource.FromFile("constructor.png") });
                     });
 
                     var r8 = ApiHelper.GetDriverStandingsBySeasonYearAsync(year).GetAwaiter().GetResult();
@@ -295,14 +282,14 @@ namespace FOne_MobileApp.ViewModels
                             OtherName = r.Driver.Nationality,
                             Desc = r.position,
                             OtherDesc = r.points,
-                            Image = ImageSource.FromFile(Regex.Replace(r.Driver.GivenName, @"\s+", "") + ".png"),
+                            Image = ImageSource.FromFile("racer.png"),
                             Year = year
                         });
                     }));
 
                     var r9 = ApiHelper.GetConstructorStandingsBySeasonYearAsync(year).GetAwaiter().GetResult();
                     r9.data.StandingsTable.StandingsLists.ForEach(x => x.ConstructorStandings.ForEach(r => {
-                        tvmConstructorResults.Content.Add(new TabModel() { Name = r.Constructor.Name, OtherName = r.Constructor.Nationality, Desc = r.position, OtherDesc = r.points, Image = ImageSource.FromFile(Regex.Replace(r.Constructor.Name, @"\s+", "") + ".png") });
+                        tvmConstructorResults.Content.Add(new TabModel() { Name = r.Constructor.Name, OtherName = r.Constructor.Nationality, Desc = r.position, OtherDesc = r.points, Image = ImageSource.FromFile("constructor.png") });
                     }));
 
                 }

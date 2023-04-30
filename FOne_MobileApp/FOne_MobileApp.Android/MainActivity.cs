@@ -82,8 +82,8 @@ namespace FOne_MobileApp.Droid
                 "et de ses décisions controversées.";
 
             //Insert data in to table 
-            dataBase.Query<Blog>("INSERT INTO Blog (Title,SubTitle,Text1,Text2,Text3,AuthorName,DateCreated,Image)values ('Max Verstappen Champion','Champion 3 etoiles ?','" + textVM + "','" + textVM2 + "','" + textVM3 + "','Jonh Wick','" + new DateTime(2023, 3, 3).ToString(CultureInfo.GetCultureInfo("FR-fr")) + "','Max.png')");
-            dataBase.Query<Blog>("INSERT INTO Blog (Title,SubTitle,Text1,Text2,Text3,AuthorName,DateCreated,Image)values ('Le retour de Sebastian Vettel','On t attend !','" + textSV + "','" + textSV2 + "','" + textSV3 + "','Jonh Wick','" + new DateTime(2023, 3, 3).ToString(CultureInfo.GetCultureInfo("FR-fr")) + "','AstonMartin.png')");
+            dataBase.Query<Blog>("INSERT INTO Blog (Title,SubTitle,Text1,Text2,Text3,AuthorName,DateCreated,Image)values ('Max Verstappen Champion','Champion 3 etoiles ?','" + textVM + "','" + textVM2 + "','" + textVM3 + "','Jonh Wick','" + new DateTime(2023, 3, 3).ToString(CultureInfo.GetCultureInfo("FR-fr")) + "','redbullf1.png')");
+            dataBase.Query<Blog>("INSERT INTO Blog (Title,SubTitle,Text1,Text2,Text3,AuthorName,DateCreated,Image)values ('Le retour de Sebastian Vettel','On t attend !','" + textSV + "','" + textSV2 + "','" + textSV3 + "','Jonh Wick','" + new DateTime(2023, 3, 3).ToString(CultureInfo.GetCultureInfo("FR-fr")) + "','ferrarif1.png')");
             dataBase.Query<Blog>("INSERT INTO Blog (Title,SubTitle,Text1,Text2,Text3,AuthorName,DateCreated,Image)values ('Qui est Helmut Marko ?','La terreur des paddocks','" + textHM + "','" + textHM2 + "','" + textHM3 + "','Jonh Wick','" + new DateTime(2023, 3, 3).ToString(CultureInfo.GetCultureInfo("FR-fr")) + "','redbullf1.jpg')");
 
         }

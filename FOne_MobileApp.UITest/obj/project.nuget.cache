@@ -1,0 +1,49 @@
+{
+  "version": 2,
+  "dgSpecHash": "klT3lohuXLByioco9P/ztUtLu0Svudm+AKUc2Ao2WEhBw340DU4oYS4qOdM/Nfy0xD9rBxvQyFpdQT88JJs3zw==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\Dell\\source\\repos\\FOne_MobileApp\\FOne_MobileApp.UITest\\FOne_MobileApp.UITest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\nunit\\3.12.0\\nunit.3.12.0.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\nunit3testadapter\\3.13.0\\nunit3testadapter.3.13.0.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.uitest\\3.0.5\\xamarin.uitest.3.0.5.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Le projet FOne_MobileApp.Android n'est pas compatible avec net461 (.NETFramework,Version=v4.6.1). Le projet FOne_MobileApp.Android prend en charge : monoandroid11.0 (MonoAndroid,Version=v11.0)",
+      "libraryId": "FOne_MobileApp.Android",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.6.1"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Le projet FOne_MobileApp.Android n'est pas compatible avec net461 (.NETFramework,Version=v4.6.1) / win. Le projet FOne_MobileApp.Android prend en charge : monoandroid11.0 (MonoAndroid,Version=v11.0)",
+      "libraryId": "FOne_MobileApp.Android",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.6.1/win"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Le projet FOne_MobileApp.Android n'est pas compatible avec net461 (.NETFramework,Version=v4.6.1) / win-x64. Le projet FOne_MobileApp.Android prend en charge : monoandroid11.0 (MonoAndroid,Version=v11.0)",
+      "libraryId": "FOne_MobileApp.Android",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.6.1/win-x64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Le projet FOne_MobileApp.Android n'est pas compatible avec net461 (.NETFramework,Version=v4.6.1) / win-x86. Le projet FOne_MobileApp.Android prend en charge : monoandroid11.0 (MonoAndroid,Version=v11.0)",
+      "libraryId": "FOne_MobileApp.Android",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.6.1/win-x86"
+      ]
+    }
+  ]
+}
