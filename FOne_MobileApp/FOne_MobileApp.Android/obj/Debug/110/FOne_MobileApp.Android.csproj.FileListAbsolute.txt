@@ -73,6 +73,8 @@ C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp.Android\
 C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp.Android\obj\Debug\110\res\drawable\teamselected.png
 C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp.Android\obj\Debug\110\res\drawable\bloggingselected.png
 C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp.Android\obj\Debug\110\res\drawable\racescircuit.png
+C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp.Android\obj\Debug\110\res\drawable\racer.png
+C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp.Android\obj\Debug\110\res\drawable\constructor.png
 C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp.Android\obj\Debug\110\uploadflags.txt
 C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp.Android\obj\Debug\110\resolvedassemblies.hash
 C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp.Android\obj\Debug\110\android\assets\FOne_MobileApp.Android.dll
@@ -623,5 +625,3 @@ C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp.Android\
 C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp.Android\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp.Android\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp.Android\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
-C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp.Android\obj\Debug\110\res\drawable\racer.png
-C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp.Android\obj\Debug\110\res\drawable\constructor.png

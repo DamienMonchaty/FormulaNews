@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['displayalert_426',['DisplayAlert',['../interface_f_one___mobile_app_1_1_services_1_1_i_page_service.html#a1af05bc50821d94f647ce1ef84b68c7d',1,'FOne_MobileApp.Services.IPageService.DisplayAlert(string title, string message, string ok, string cancel)'],['../interface_f_one___mobile_app_1_1_services_1_1_i_page_service.html#a900211a2cdf0c5c94e0daf1e28765cab',1,'FOne_MobileApp.Services.IPageService.DisplayAlert(string title, string message, string ok)'],['../class_f_one___mobile_app_1_1_services_1_1_page_service.html#ab311bd166b89c0c04fb4289f6c5c4d9d',1,'FOne_MobileApp.Services.PageService.DisplayAlert(string title, string message, string ok, string cancel)'],['../class_f_one___mobile_app_1_1_services_1_1_page_service.html#a23f6440d81d6bfc904d671364d0b27a5',1,'FOne_MobileApp.Services.PageService.DisplayAlert(string title, string message, string ok)']]]
+];

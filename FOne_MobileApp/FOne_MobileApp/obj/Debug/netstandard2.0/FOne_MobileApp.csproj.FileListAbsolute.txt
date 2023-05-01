@@ -2,6 +2,7 @@ C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp\bin\Debu
 C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp\bin\Debug\netstandard2.0\FOne_MobileApp.dll
 C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp\bin\Debug\netstandard2.0\ref\FOne_MobileApp.dll
 C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp\bin\Debug\netstandard2.0\FOne_MobileApp.pdb
+C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp\obj\Debug\netstandard2.0\FOne_MobileApp.csproj.AssemblyReference.cache
 C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp\obj\Debug\netstandard2.0\FOne_MobileApp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp\obj\Debug\netstandard2.0\Controls\AboutView.xaml.g.cs
@@ -21,4 +22,3 @@ C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp\obj\Debu
 C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp\obj\Debug\netstandard2.0\FOne_MobileApp.dll
 C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp\obj\Debug\netstandard2.0\ref\FOne_MobileApp.dll
 C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp\obj\Debug\netstandard2.0\FOne_MobileApp.pdb
-C:\Users\Dell\source\repos\FOne_MobileApp\FOne_MobileApp\FOne_MobileApp\obj\Debug\netstandard2.0\FOne_MobileApp.csproj.AssemblyReference.cache
