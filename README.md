@@ -3,10 +3,15 @@
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)  [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
 
 ## Prérequis
-Afin de pouvoir exécuter l'application sur votre poste, vous devez d'aborder installer les dépendances suivantes :
+Afin de pouvoir exécuter l'application sur votre poste, vous devez d'aborder installer les outils suivants :
+  * Visual Studio 2022
   * Xamarin Forms
  
 ### Installation
+
+### Visual Studio 2022
+
+- [TélEcharger Visual Stuido 2022 Commnunity](https://visualstudio.microsoft.com/fr/vs/community/)
 
 #### Xamarin Forms
 
@@ -33,6 +38,10 @@ Afin de pouvoir exécuter l'application sur votre poste, vous devez d'aborder in
 -	Appuyer 7 fois sur « Build number » jusqu’à ce que vous soyez maintenant développeur !
 est visible.
 -	Vérifier que le débogage USB est activé sur l’appareil.
+
+## Modification de la chaìne de connexion à Mysql
+- Rendez-vous dans le fichier appSettings.json.
+- Puis modifier les Username et Password par celles configurés durant votre installation de MySQL
 
 ## Exécution
 
