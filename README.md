@@ -1,14 +1,14 @@
-# FormulaNews - Manuel D’utilisation
+# FormulaNews Mobile - Manuel D’utilisation
 
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)  [![forthebadge](http://forthebadge.com/images/badges/powered-by-electricity.svg)](http://forthebadge.com)
 
-### Pré-requis 
-
-- déplacez-le dans votre espace de travail.
--	Puis ouvrez-le dans votre Visual Studio 2022.
-  https://visualstudio.microsoft.com/fr/vs/community/
-
+## Prérequis
+Afin de pouvoir exécuter l'application sur votre poste, vous devez d'aborder installer les dépendances suivantes :
+  * Xamarin Forms
+ 
 ### Installation
+
+#### Xamarin Forms
 
 -	Dans Visual Studio 2022, veuilez cliquer sur le bouton « Outils ».
 -	Cliquer sur le bouton « Outils et Fonctionalités ».
@@ -34,9 +34,9 @@
 est visible.
 -	Vérifier que le débogage USB est activé sur l’appareil.
 
-## Démarrage
+## Exécution
 
--	Dans Visual Studio 2022, Charger le projet FOneMobileApp.Android en tant que projet de démarrage.
+-	Dans Visual Studio 2022, charger le projet FOneMobileApp.Android en tant que projet de démarrage.
 -	Cliquer sur la flèche déroulante à côté du bonton « Déboguer » pour sélectionner un appareil.
 -	Puis, cliquer sur le bouton « Déboguer ».
 
